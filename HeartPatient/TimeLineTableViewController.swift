@@ -30,6 +30,8 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
     var newParameters = [AnyObject]()
     var symptomSamples = [SymptomsModel]()
     
+    var medicineSamples = [Medicine]()
+    
     var patientSample = [SummaryPatient]()
 
     
@@ -61,6 +63,14 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
     @IBOutlet var checkSymptomsImage: UIImageView!
     @IBOutlet var symptomsAndSleepLabel: UILabel!
     @IBOutlet var confirmationSymptomsLabel: UILabel!
+    
+    
+    @IBOutlet weak var morningPillsLabel: UILabel!
+    
+    @IBOutlet weak var afternoonPillsLabel: UILabel!
+    
+    @IBOutlet weak var eveningPillsLabel: UILabel!
+    
     
     
     let filledColors = UIColor(red: 6/255, green: 122/255, blue: 255/255, alpha: 1.0)
@@ -320,10 +330,12 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
                 let toDateBloodPressure = HelperFunctions.shortString(self.bloodPressureSamples[0].date)
                 let todayString = HelperFunctions.convertDateToShortString(NSDate())
                 
-                print("BLOOD PRESSURE ADVICE CHECK DATES: ", toDateBloodPressure, todayString)
                 if self.bloodPressureSamples.count > 3 && (toDateBloodPressure == todayString) {
+                    
                     recentSystolicBP = self.bloodPressureSamples[0].systolic
                     
+                    print("BLOOD PRESSURE ADVICE CHECK DATES: ", toDateBloodPressure, todayString, recentSystolicBP)
+
                     if recentSystolicBP > 120 {
                         bpAdvice = "Blood Pressure\nYour systolic blood pressure (SBP) is very high. Your SBP is \(recentSystolicBP) mmHg, however it should not be higher than 120 mmHg.\nTry measuring again and fill up your symptoms, or else contact the Doctor very soon for increasing your ACE Inhibitor dose."
                         systolicStability = "high bp"
@@ -358,7 +370,7 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
                 let todayString = HelperFunctions.convertDateToShortString(NSDate())
 
                 print("HEART RATE ADVICE CHECK DATE: ", toDateHeartRate, todayString)
-                if self.bloodPressureSamples.count > 3  && (toDateHeartRate == todayString) {
+                if self.heartRateSamples.count > 3  && (toDateHeartRate == todayString) {
                     recentHeartRate = self.heartRateSamples[heartCounter].measurement
                     
                     if recentHeartRate >= 70 {
@@ -537,9 +549,10 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
             
             var countUnstability = 0
             
-            var diuretic = -1
-            var ace_i = -1
-            var beta_blocker = -1
+            var diuretic = 0
+            var ace_i = 0
+            var beta_blocker = 0
+            var nurseConfirmation = -1
             
             if weightStability == "gain 2kg" && swollenBody != "No-Swollen" {
                 print("increase diuretics")
@@ -550,8 +563,8 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
                 swollenBody != "No-Swollen" || sleepPosition == "vertical") {
                 
                 diuretic = 1
-                ace_i = 1
-                beta_blocker = 1
+                ace_i = -1
+                beta_blocker = -1
 
                 print("increase diuretics")
                 print("decrease ace-i")
@@ -589,7 +602,7 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
                 beta_blocker = -1
 
             }
-            
+           
             
             /* ends medicine */
             
@@ -598,18 +611,21 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
                 countUnstability = 1
                 symptomsToNurse.append(1)
                 weightEvaluation = 1
+                symptomEvaluation = 1
             }
             
             if systolicStability == "high bp" || systolicStability == "low bp"{
                 countUnstability = countUnstability + 1
                 symptomsToNurse.append(2)
                 bpEvaluation = 1
+                symptomEvaluation = symptomEvaluation + 1
             }
             
             if heartRateStability == "high hr" || heartRateStability == "low hr"{
                 countUnstability = countUnstability + 1
                 symptomsToNurse.append(3)
                 hrEvaluation = 1
+                symptomEvaluation = symptomEvaluation + 1
             }
             
             if (degreeDyspnea > degreeDyspneaYesterday) {
@@ -680,8 +696,11 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
             // symptom evaluation is used for determine patient unstability
             self.dataService.sendPatientAsUnstable(userID!, username: username, weight: weightEvaluation, bp: bpEvaluation, hr: hrEvaluation, numberOfSymptoms: symptomEvaluation, counter: countUnstability, date: date)
             
-            self.dataService.sendPatientReportToNurse(userID!, username: username, weightValue: weightRecentMeasurement, weighValueAdvice: weightAdviceNurse, bloodPressureValue: recentSystolicBP, bloodPressureAdvice: bloodPressureAdviceNurse, heartRateValue: recentHeartRate, heartRateAdvice: heartRateAdviceNurse, symptomSwelling: symptomSwellingNurse, symptom1TodayAndYesterday: symptom1TodayAndYesterdayNurse, symptomSleep: symptomSleepNurse, symptomNausea: symptomNauseaNurse, symptomDizziness: symptomDizzinessNurse, symptomCough: symptomCoughNurse, counter: symptomEvaluation, date: date)
+            self.dataService.sendPatientReportToNurse(userID!, username: username, weightValue: weightRecentMeasurement, weighValueAdvice: weightAdviceNurse, bloodPressureValue: recentSystolicBP, bloodPressureAdvice: bloodPressureAdviceNurse, heartRateValue: recentHeartRate, heartRateAdvice: heartRateAdviceNurse, symptomSwelling: symptomSwellingNurse, symptom1TodayAndYesterday: symptom1TodayAndYesterdayNurse, symptomSleep: symptomSleepNurse, symptomNausea: symptomNauseaNurse, symptomDizziness: symptomDizzinessNurse, symptomCough: symptomCoughNurse, counter: symptomEvaluation, date: date, diuretic: diuretic, ace_i: ace_i, beta_blocker: beta_blocker,  nurseConfirmation: nurseConfirmation)
 
+            
+//            dataService.sendMedicineToNurse(userID!, username: username, acei: ace_i, betablocker: beta_blocker, diuretic: diuretic, nurseConfirmation: nurseConfirmation, date: date)
+            
             
             print("Patient illness level: ", countUnstability)
             print("Patient was feeling: ", degreeDyspneaYesterday, degreeDyspnea, degreeFatigue, degreeSymptom2, cough, swollenBody, sleepPosition)
@@ -703,6 +722,7 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
     func symptomsFromDataBase() {
         let username = self.dataService.getUserName()
         dataService.fetchSymptoms(username, callback: populateSymptoms)
+        dataService.fetchMedicine(username, callback: populateMedicine)
     }
     
     func populateSymptoms(symptoms: [SymptomsModel]) -> Void {
@@ -753,6 +773,46 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
         }
     }
     
+    
+    func populateMedicine(medicine: [Medicine]) -> Void {
+        self.medicineSamples = medicine
+        if self.medicineSamples.count > 0 {
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                let stringMedicine = self.medicineSamples[0].date
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+                let dateMedicine = dateFormatter.dateFromString(stringMedicine)!
+                
+                
+                
+                let clearCalendar = NSCalendar.currentCalendar()
+                let clearTimeStart = clearCalendar.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: NSCalendarOptions())
+                
+                if (clearTimeStart!.compare(dateMedicine) == .OrderedAscending) {
+                    
+                    
+                    self.morningPillsLabel.text = self.medicineSamples[0].aceInhibitorType + "/" + self.medicineSamples[0].betaBlockerType + "/" + self.medicineSamples[0].diureticType + "/" + self.medicineSamples[0].mraType
+                    
+                    self.afternoonPillsLabel.text = self.medicineSamples[0].aceInhibitorType + "/" + self.medicineSamples[0].betaBlockerType + "/" + self.medicineSamples[0].diureticType + "/" + self.medicineSamples[0].mraType
+                    
+                    self.eveningPillsLabel.text = self.medicineSamples[0].aceInhibitorType + "/" + self.medicineSamples[0].betaBlockerType + "/" + self.medicineSamples[0].diureticType + "/" + self.medicineSamples[0].mraType
+                    
+                    print("- MEDICINES FROM FIREBASE: ", self.medicineSamples[0].aceInhibitorType + self.medicineSamples[0].betaBlockerType + self.medicineSamples[0].diureticType + self.medicineSamples[0].mraType, self.medicineSamples[0].date)
+                    
+                    
+                } else {
+                    
+                  
+                    
+                    print("- MEDICINE HAS CHANGED TO EMPTY LABEL")
+                }
+            })
+            
+        }
+    }
+
     
     /* Heart rates to Firebase (first time) */
     
@@ -1095,7 +1155,7 @@ class TimeLineTableViewController: UITableViewController, UIApplicationDelegate{
             
             //var bloodTime =  "xxxxxx"
             
-            self.bloodPressureSamples = []
+            //self.bloodPressureSamples = []
             
             if let dataList = results as? [HKCorrelation]  {
                 //print("- These are blood pressure samples in array: ", dataList )
@@ -1321,7 +1381,7 @@ extension TimeLineTableViewController: ORKTaskViewControllerDelegate {
                     self.symptomsAndSleepLabel.text = "Good job, you answered the questions"
                     
                     self.confirmationSymptomsLabel.textColor = filledColorGray
-                    self.confirmationSymptomsLabel.text = "Try it again tomorrow"
+                    self.confirmationSymptomsLabel.text = "See your Evaluation"
                     
                     let symptomsImage = UIImage(named: "feeling")
                     self.symptomsAndSleepImage.image = symptomsImage!.tintWithColor(UIColor(red: 6/255, green: 122/255, blue: 255/255, alpha: 1.0))

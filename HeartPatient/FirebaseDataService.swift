@@ -26,6 +26,7 @@ class FirebaseDataService {
     
     var users = [UserObj]()
     var symptoms = [SymptomsModel]()
+    var medicine = [Medicine]()
 
     
     func FirebaseSignUp(name: String, lastname: String, username: String, email: String, password: String) {
@@ -303,8 +304,10 @@ class FirebaseDataService {
         // [END write_fan_out]
     }
     
-    func sendPatientReportToNurse(userID: String, username: String, weightValue: Float, weighValueAdvice: String, bloodPressureValue: Float, bloodPressureAdvice: String, heartRateValue: Float, heartRateAdvice: String, symptomSwelling: String, symptom1TodayAndYesterday: String, symptomSleep: String, symptomNausea: String, symptomDizziness: String, symptomCough: String, counter: Int, date: String) {
+    func sendPatientReportToNurse(userID: String, username: String, weightValue: Float, weighValueAdvice: String, bloodPressureValue: Float, bloodPressureAdvice: String, heartRateValue: Float, heartRateAdvice: String, symptomSwelling: String, symptom1TodayAndYesterday: String, symptomSleep: String, symptomNausea: String, symptomDizziness: String, symptomCough: String, counter: Int, date: String, diuretic: Int, ace_i: Int, beta_blocker: Int, nurseConfirmation: Int ) {
         
+        
+
         
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
@@ -333,7 +336,17 @@ class FirebaseDataService {
                             "symptomCough": symptomCough,
                             
                             "count": counter,
-                            "date": date]
+                            "date": date,
+            
+                            "diuretic": diuretic,
+                            "ace_i": ace_i,
+                            "beta_blocker": beta_blocker,
+                            "nurseConfirmation": nurseConfirmation
+        
+        ]
+        
+        
+        
         
         
         //let childUpdates = ["/weights/\(key)": weightPost,
@@ -346,5 +359,103 @@ class FirebaseDataService {
         // [END write_fan_out]
     }
     
+    
+    
+    func sendMedicineToNurse(userID: String, username: String, acei: Int, betablocker: Int, diuretic: Int, nurseConfirmation: Int, date: String) {
+        
+        
+        // Create new post at /user-posts/$userid/$postid and at
+        // /posts/$postid simultaneously
+        // [START write_fan_out]
+        //let key = BASE_REF.child("posts").childByAutoId().key
+        //let key = "KPk6vBEHM2LKHYuH51N"
+        let report = [      "uid": userID,
+                            "username": username,
+                            
+                            "acei": acei,
+                            "betablocker": betablocker,
+                            "diuretic": diuretic,
+                            "nurseConfirmation": nurseConfirmation,
+                            "date": date]
+        
+        
+        //let childUpdates = ["/weights/\(key)": weightPost,
+        //                    "/user-weights/\(userID)/\(key)/": weightPost]
+        
+        //        let childUpdates = ["/unstable-users/\(userID)/\(key)/": unstablePost]
+        let childUpdates = ["/medicine-to-nurse/\(userID)/": report]
+        
+        BASE_REF.updateChildValues(childUpdates)
+        // [END write_fan_out]
+    }
+
+    
+    func fetchMedicine(userName : String,  callback:([Medicine])->Void) -> Void {
+        
+        // Avoid exponential incremental of symptoms each time methods is being called from Timeline - viewdidappear
+        medicine = []
+        
+        self.BASE_REF.child("medicine-from-nurse").observeEventType(.ChildAdded, withBlock: { snapshot in
+            for child in snapshot.children.reverse() {
+                
+                let aceInhibitorType = child.value["aceInhibitorType"] as? String
+                let aceInhibitorDose = child.value["aceInhibitorDose"] as? String
+                let aceInhibitorTimes = child.value["aceInhibitorTimes"] as? String
+            
+                let betaBlockerType = child.value["betaBlockerType"] as? String
+                let betaBlockerDose = child.value["betaBlockerDose"] as? String
+                let betaBlockerTimes = child.value["betaBlockerTimes"] as? String
+                
+                let diureticType = child.value["diureticType"] as? String
+                let diureticDose = child.value["diureticDose"] as? String
+                let diureticTimes = child.value["diureticTimes"] as? String
+                
+                let arbType = child.value["arbType"] as? String
+                let arbDose = child.value["arbDose"] as? String
+                let arbTimesADay = child.value["arbTimesADay"] as? String
+
+                let mraType = child.value["mraType"] as? String
+                let mraDose = child.value["mraDose"] as? String
+                let mraTimesADay = child.value["mraTimesADay"] as? String
+                
+                let username = child.value["username"] as? String
+                let date = child.value["date"] as? String
+
+                
+                
+                let medicineOne = Medicine()
+                if userName == username {
+                    medicineOne.aceInhibitorType = aceInhibitorType!
+                    medicineOne.aceInhibitorDose = aceInhibitorDose!
+                    medicineOne.aceInhibitorTimes = aceInhibitorTimes!
+                    
+                    medicineOne.betaBlockerType = betaBlockerType!
+                    medicineOne.betaBlockerDose = betaBlockerDose!
+                    medicineOne.betaBlockerTimes = betaBlockerTimes!
+                    
+                    medicineOne.diureticType = diureticType!
+                    medicineOne.diureticDose = diureticDose!
+                    medicineOne.diureticTimes = diureticTimes!
+                    
+                    medicineOne.arbType = arbType!
+                    medicineOne.arbDose = arbDose!
+                    medicineOne.arbTimesADay = arbTimesADay!
+                    
+                    medicineOne.mraType = mraType!
+                    medicineOne.mraDose = mraDose!
+                    medicineOne.mraTimesADay = mraTimesADay!
+                    
+                    medicineOne.date = date!
+                    
+                    
+                    self.medicine.append(medicineOne)
+                }
+
+                
+            }
+            callback(self.medicine)
+        })
+    }
+
     
 }
