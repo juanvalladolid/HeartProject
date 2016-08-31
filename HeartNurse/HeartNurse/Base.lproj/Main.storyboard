@@ -311,7 +311,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SYSTEM TITRATION SUGGESTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95f-lw-cmq">
                                                     <rect key="frame" x="197" y="11" width="206" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -323,38 +323,25 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.89009666440000001" green="0.89009666440000001" blue="0.89009666440000001" alpha="0.25" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicineCell" rowHeight="197" id="pxI-7o-8mY">
-                                        <rect key="frame" x="0.0" y="108" width="600" height="197"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicineCell" rowHeight="107" id="pxI-7o-8mY">
+                                        <rect key="frame" x="0.0" y="108" width="600" height="107"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pxI-7o-8mY" id="9GH-8I-8a0">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="196"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mPC-Wm-NUx">
-                                                    <rect key="frame" x="15" y="8" width="571" height="141"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPC-Wm-NUx">
+                                                    <rect key="frame" x="15" y="8" width="571" height="90"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Based on symptoms and objective data from the patient, the system recommends the following medication update:
-
-- Medicine: xxxxx Dose: 000 mg
-- Medicine: xxxxx Dose: 000 mg
-- Medicine: xxxxx Dose: 000 mg
-
-For accepting this suggestion tap "Confirmation", else go below to "edit" the titration.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohl-o5-eEY">
-                                                    <rect key="frame" x="256" y="157" width="89" height="30"/>
-                                                    <state key="normal" title="Confirmation"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="mPC-Wm-NUx" firstAttribute="leading" secondItem="9GH-8I-8a0" secondAttribute="leadingMargin" constant="7" id="7qs-HM-5Qs"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="mPC-Wm-NUx" secondAttribute="bottom" constant="39" id="EKC-kK-czf"/>
-                                                <constraint firstItem="mPC-Wm-NUx" firstAttribute="centerX" secondItem="Ohl-o5-eEY" secondAttribute="centerX" id="RMZ-6d-Vdh"/>
-                                                <constraint firstItem="mPC-Wm-NUx" firstAttribute="top" secondItem="9GH-8I-8a0" secondAttribute="topMargin" id="bVo-Sv-Iv3"/>
-                                                <constraint firstItem="mPC-Wm-NUx" firstAttribute="centerX" secondItem="9GH-8I-8a0" secondAttribute="centerX" id="g8t-fa-ePT"/>
-                                                <constraint firstItem="Ohl-o5-eEY" firstAttribute="bottom" secondItem="9GH-8I-8a0" secondAttribute="bottomMargin" constant="-1" id="ztD-HO-01u"/>
+                                                <constraint firstItem="mPC-Wm-NUx" firstAttribute="centerX" secondItem="9GH-8I-8a0" secondAttribute="centerX" id="BGU-cn-JaU"/>
+                                                <constraint firstItem="mPC-Wm-NUx" firstAttribute="leading" secondItem="9GH-8I-8a0" secondAttribute="leadingMargin" constant="7" id="TMG-3r-EDJ"/>
+                                                <constraint firstItem="mPC-Wm-NUx" firstAttribute="top" secondItem="9GH-8I-8a0" secondAttribute="topMargin" id="ndk-aS-aLQ"/>
+                                                <constraint firstItem="mPC-Wm-NUx" firstAttribute="bottom" secondItem="9GH-8I-8a0" secondAttribute="bottomMargin" id="pwh-Gs-p2R"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -363,7 +350,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                             <tableViewSection headerTitle="" id="F9P-FQ-QrA">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerOneCell" id="Ep2-BV-9ew">
-                                        <rect key="frame" x="0.0" y="305" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="215" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ep2-BV-9ew" id="94w-fh-Cve">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -375,7 +362,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="206" id="mzE-Mb-U1I"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -388,7 +375,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         <color key="backgroundColor" red="0.89009666440000001" green="0.89009666440000001" blue="0.89009666440000001" alpha="0.25" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AceCell" id="acH-GK-2b8">
-                                        <rect key="frame" x="0.0" y="349" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="259" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="acH-GK-2b8" id="u3Q-Bh-E1e">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -400,7 +387,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="134" id="CO2-pZ-LPC"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select --&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEP-yu-Q0H">
@@ -409,7 +396,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="115" id="wwG-Tc-Z2e"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -427,7 +414,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AceCell2" rowHeight="90" id="7BI-Ww-Npt">
-                                        <rect key="frame" x="0.0" y="393" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="303" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7BI-Ww-Npt" id="vKl-g3-U4I">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -439,13 +426,13 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="90" id="kiR-SS-YTI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wy6-pD-Lp2">
                                                     <rect key="frame" x="36" y="57" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 10 mg" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZO-y4-Jfr">
@@ -479,7 +466,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BetaCell" id="7Yo-8J-uGY">
-                                        <rect key="frame" x="0.0" y="483" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="393" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Yo-8J-uGY" id="u9j-z4-iLt">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -491,7 +478,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="134" id="QEQ-a1-thz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select --&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2m5-7O-cQa">
@@ -500,7 +487,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="115" id="rtd-Sm-NwE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -518,7 +505,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BetaCell2" rowHeight="90" id="grg-pY-pjm">
-                                        <rect key="frame" x="0.0" y="527" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="437" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="grg-pY-pjm" id="6Pt-OX-E3x">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -530,13 +517,13 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="90" id="CBj-tS-i6q"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VED-Gk-WF5">
                                                     <rect key="frame" x="36" y="57" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 10 mg" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GOA-Zw-nHS">
@@ -570,7 +557,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DiureticCell" id="F8t-hc-5PB">
-                                        <rect key="frame" x="0.0" y="617" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="527" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8t-hc-5PB" id="6ta-lf-Mou">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -582,7 +569,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="134" id="0go-Z9-btv"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select --&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvi-H6-aaE">
@@ -591,7 +578,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="115" id="mbr-Td-t0X"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -609,7 +596,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DiureticCell2" rowHeight="90" id="yro-77-ukH">
-                                        <rect key="frame" x="0.0" y="661" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="571" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yro-77-ukH" id="XFH-da-yyu">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -621,13 +608,13 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="90" id="Bl8-pX-mV0"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7q-je-BIK">
                                                     <rect key="frame" x="36" y="57" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 10 mg" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTm-mL-9JP">
@@ -661,7 +648,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ARBCell" id="Qb9-4o-LHA">
-                                        <rect key="frame" x="0.0" y="751" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="661" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qb9-4o-LHA" id="hIj-g3-Sh4">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -673,7 +660,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="134" id="44Y-7b-Iyu"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select --&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUK-vT-9bz">
@@ -682,7 +669,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="115" id="eAk-0Y-awc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -700,7 +687,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ARBCell2" rowHeight="90" id="0ws-fc-gYy">
-                                        <rect key="frame" x="0.0" y="795" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="705" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0ws-fc-gYy" id="TYW-Vb-NUc">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -712,13 +699,13 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="90" id="fyg-Fr-8Kj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZB-1V-lsC">
                                                     <rect key="frame" x="36" y="57" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 10 mg" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xCz-Ry-WwX">
@@ -734,10 +721,14 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0EY-XI-Gju">
+                                                    <rect key="frame" x="290" y="35" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xCz-Ry-WwX" firstAttribute="trailing" secondItem="lOP-VF-PWT" secondAttribute="trailing" id="8Rv-PO-Zc0"/>
                                                 <constraint firstItem="iJN-eA-mZl" firstAttribute="baseline" secondItem="xCz-Ry-WwX" secondAttribute="baseline" id="9R6-LQ-hNA"/>
+                                                <constraint firstItem="0EY-XI-Gju" firstAttribute="centerX" secondItem="TYW-Vb-NUc" secondAttribute="centerX" id="ANe-lX-wkb"/>
                                                 <constraint firstItem="lOP-VF-PWT" firstAttribute="baseline" secondItem="cZB-1V-lsC" secondAttribute="firstBaseline" id="C9g-c7-V4M"/>
                                                 <constraint firstItem="iJN-eA-mZl" firstAttribute="leading" secondItem="TYW-Vb-NUc" secondAttribute="leadingMargin" constant="28" id="I9R-sa-jHc"/>
                                                 <constraint firstItem="iJN-eA-mZl" firstAttribute="leading" secondItem="cZB-1V-lsC" secondAttribute="leading" id="IvP-NA-fn1"/>
@@ -746,13 +737,14 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                 <constraint firstItem="iJN-eA-mZl" firstAttribute="top" secondItem="TYW-Vb-NUc" secondAttribute="topMargin" constant="3" id="fNs-Qk-wcW"/>
                                                 <constraint firstItem="iJN-eA-mZl" firstAttribute="trailing" secondItem="cZB-1V-lsC" secondAttribute="trailing" id="gX1-BA-Qsc"/>
                                                 <constraint firstItem="xCz-Ry-WwX" firstAttribute="leading" secondItem="lOP-VF-PWT" secondAttribute="leading" id="iKm-2A-aRs"/>
+                                                <constraint firstItem="0EY-XI-Gju" firstAttribute="centerY" secondItem="TYW-Vb-NUc" secondAttribute="centerY" id="igB-Sp-qzr"/>
                                                 <constraint firstItem="xCz-Ry-WwX" firstAttribute="leading" secondItem="iJN-eA-mZl" secondAttribute="trailing" constant="12" id="ojP-Ok-OQO"/>
                                                 <constraint firstItem="lOP-VF-PWT" firstAttribute="top" secondItem="xCz-Ry-WwX" secondAttribute="bottom" constant="13" id="uzz-dz-4nW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MRACell" id="TXc-NP-b3w">
-                                        <rect key="frame" x="0.0" y="885" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="795" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TXc-NP-b3w" id="neW-v3-jSS">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -764,7 +756,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="134" id="cU5-uK-E94"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select --&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phJ-X8-UeK">
@@ -773,7 +765,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="115" id="2IP-wQ-uy6"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -791,7 +783,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MRACell2" rowHeight="90" id="Ucj-q7-99Z">
-                                        <rect key="frame" x="0.0" y="929" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="839" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ucj-q7-99Z" id="huG-7x-uAe">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -803,13 +795,13 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                                         <constraint firstAttribute="width" constant="90" id="gKA-kL-OQz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgH-O5-S3U">
                                                     <rect key="frame" x="36" y="57" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 10 mg" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ei-fk-Zuc">
@@ -843,7 +835,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SubmitteCell" rowHeight="81" id="ptA-dC-hFg">
-                                        <rect key="frame" x="0.0" y="1019" width="600" height="81"/>
+                                        <rect key="frame" x="0.0" y="929" width="600" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ptA-dC-hFg" id="42A-jk-3vd">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
@@ -887,9 +879,11 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
                         <outlet property="diureticDose" destination="jTm-mL-9JP" id="Qdf-wL-hd9"/>
                         <outlet property="diureticTimesADay" destination="3dr-kK-dQC" id="Ogo-hg-GwD"/>
                         <outlet property="diureticType" destination="pvi-H6-aaE" id="E9N-jt-bLN"/>
+                        <outlet property="medicineActivityIndicator" destination="0EY-XI-Gju" id="s0A-1M-HO2"/>
                         <outlet property="mraDose" destination="6Ei-fk-Zuc" id="A64-fY-Czd"/>
                         <outlet property="mraTimesADay" destination="2x4-1n-0Le" id="4uu-Dz-KUc"/>
                         <outlet property="mraType" destination="phJ-X8-UeK" id="TLE-W9-8tb"/>
+                        <outlet property="suggestedMedicineTextView" destination="mPC-Wm-NUx" id="Oqp-CD-4wv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Sg-kR-jnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1012,7 +1006,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
         <scene sceneID="EUD-bN-mFC">
             <objects>
                 <navigationController title="Medicine" id="KJ7-oq-hJ9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Medicine" id="b9d-d0-Pwo"/>
+                    <tabBarItem key="tabBarItem" title="Medicine" image="pills-alone" id="b9d-d0-Pwo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XeI-2x-19a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1366,6 +1360,7 @@ For accepting this suggestion tap "Confirmation", else go below to "edit" the ti
     <resources>
         <image name="blood-pressure" width="155" height="155"/>
         <image name="chart" width="25" height="25"/>
+        <image name="pills-alone" width="37" height="37"/>
         <image name="subjective" width="25" height="25"/>
         <image name="symptoms" width="155" height="155"/>
         <image name="weight" width="155" height="155"/>

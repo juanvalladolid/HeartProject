@@ -489,11 +489,26 @@ class ChartTableViewController: UITableViewController {
                 if calculateMinMax[3] != 0 {
                     
                     let weightDifference = calculateMinMax[0] - calculateMinMax[3]
-                    self.weightDateLabel.text = "Difference Past 3 days: " +  String(format: "%.2f", weightDifference) + " kg   " + HelperFunctions.shortString(self.weights[0].date)
                     
-                } else if calculateMinMax[3] != 0 {
-                    let weightDifference = calculateMinMax[0] - calculateMinMax[3]
-                    self.weightDateLabel.text = "Difference Past 2 days: " + String(format: "%.2f", weightDifference) + " kg   " + HelperFunctions.shortString(self.weights[0].date)
+                    if weightDifference > 2 {
+                        self.weightDateLabel.text = "Difference Past 3 days: " +  String(format: "%.2f", weightDifference) + " kg   " + HelperFunctions.shortString(self.weights[0].date)
+                        self.weightDateLabel.textColor = UIColor.redColor()
+                        
+                    } else {
+                        self.weightDateLabel.text = "Difference Past 3 days: " +  String(format: "%.2f", weightDifference) + " kg   " + HelperFunctions.shortString(self.weights[0].date)
+                    }
+                    
+                    
+                } else if calculateMinMax[2] != 0 {
+                    let weightDifference = calculateMinMax[0] - calculateMinMax[2]
+                    if weightDifference > 2 {
+                        self.weightDateLabel.text = "Difference Past 3 days: " +  String(format: "%.2f", weightDifference) + " kg   " + HelperFunctions.shortString(self.weights[0].date)
+                        self.weightDateLabel.textColor = UIColor.redColor()
+                        
+                    } else {
+                        self.weightDateLabel.text = "Difference Past 3 days: " +  String(format: "%.2f", weightDifference) + " kg   " + HelperFunctions.shortString(self.weights[0].date)
+                    }
+
                 }
                 
 

@@ -43,7 +43,7 @@ class ARBTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    let arb = ["Candesartan     4–8 o.d.     32 o.d.", "Valsartan     40 b.i.d.     160 b.i.d.", "Losartanb     50 o.d.     150 o.d."]
+    let arb = ["Candesartan", "Valsartan", "Losartanb"]
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arb.count

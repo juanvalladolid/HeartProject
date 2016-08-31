@@ -404,7 +404,7 @@ class FirebaseService {
                     
                     let bloodPressureValue = child.value["bloodPressureValue"] as? Float
                     let bloodPressureAdvice = child.value["bloodPressureAdvice"] as? String
-
+                    
                     let heartRateValue = child.value["heartRateValue"] as? Float
                     let heartRateAdvice = child.value["heartRateAdvice"] as? String
                     
@@ -414,10 +414,18 @@ class FirebaseService {
                     
                     let symptomNausea = child.value["symptomNausea"] as? String
                     let symptomCough = child.value["symptomCough"] as? String
-
+                    
                     let date = child.value["date"] as? String
-
+                    
                     let counters = child.value["count"] as? Int
+                    
+                    let ace_i = child.value["ace_i"] as? Int
+                    let beta_blocker = child.value["beta_blocker"] as? Int
+                    let diuretic = child.value["diuretic"] as? Int
+                    let nurseConfirmation = child.value["nurseConfirmation"] as? Int
+                    
+                    
+                    
                     
                     summaryToNurseOne.userName = userName
                     summaryToNurseOne.weightValue = weightValue!
@@ -439,14 +447,21 @@ class FirebaseService {
                     summaryToNurseOne.date = date!
                     summaryToNurseOne.count = counters!
                     
+                    
+                    summaryToNurseOne.ace_i = ace_i!
+                    summaryToNurseOne.beta_blocker = beta_blocker!
+                    summaryToNurseOne.diuretic = diuretic!
+                    summaryToNurseOne.nurseConfirmation = nurseConfirmation!
+                    
                     self.summaryToNurse.append(summaryToNurseOne)
                     
                 }
             }
             
             for i in self.summaryToNurse {
-                print("*** Summary to nurse from Firebase method: ", i.date, i.symptom1TodayAndYesterday)
+                print("*** Summary to nurse from Firebase method: ", i.weightValue, i.ace_i, i.beta_blocker,  i.date, i.symptom1TodayAndYesterday)
             }
+
             
             callback(self.summaryToNurse)
         })
@@ -506,7 +521,7 @@ class FirebaseService {
     }
     
     
-
+    
 
     
 }

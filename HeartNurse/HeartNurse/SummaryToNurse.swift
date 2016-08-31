@@ -36,4 +36,9 @@ class SummaryToNurse: NSObject {
     var count: Int = 0
     
     
+    var diuretic:Int = 0
+    var ace_i:Int = 0
+    var beta_blocker:Int = 0
+    var nurseConfirmation:Int = 0
+    
 }

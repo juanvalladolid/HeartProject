@@ -42,8 +42,8 @@ class MRATableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    let mra = ["Eplerenone     25 o.d.     50 o.d.", "Spironolactone     25 o.d.     50 o.d."]
-    
+    let mra = ["Eplerenone", "Spironolactone"]
+    //let mra = ["xxxx", "yyyy"]
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,6 +64,11 @@ class MRATableViewController: UITableViewController {
         if let delegate = delegate {
             let mraName = mra[indexPath.row]
             delegate.mraPicker(self, didPickName: mraName)
+            
+        }
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            cell.accessoryType = .Checkmark
+            
         }
     }
 }

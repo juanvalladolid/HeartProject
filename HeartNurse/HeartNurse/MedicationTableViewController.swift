@@ -13,6 +13,9 @@ class MedicationTableViewController: UITableViewController, ACETableViewControll
     
     let dataService = FirebaseService()
     
+    @IBOutlet weak var medicineActivityIndicator: UIActivityIndicatorView!
+    var summaryToNurseSamples = [SummaryToNurse]()
+    
     @IBOutlet weak var aceType: UILabel!
     @IBOutlet weak var aceDose: UITextField!
     @IBOutlet weak var aceTimesADay: UITextField!
@@ -37,6 +40,10 @@ class MedicationTableViewController: UITableViewController, ACETableViewControll
     @IBOutlet weak var mraDose: UITextField!
     @IBOutlet weak var mraTimesADay: UITextField!
     
+    
+    @IBOutlet weak var suggestedMedicineTextView: UITextView!
+    
+    
     var userSelected = User()
     var patientSelected = SummaryPatient()
     
@@ -44,12 +51,18 @@ class MedicationTableViewController: UITableViewController, ACETableViewControll
     var patientUid = ""
     
     
-    var aceName = "select here  -- >"
-    var betaBlockerName = "Select here   -- >"
-    var diureticName = "select here  -- >"
-    var arbName = "select here  -- >"
-    var mraName = "select here  -- >"
+    var aceName = ""
+    var betaBlockerName = ""
+    var diureticName = ""
+    var arbName = ""
+    var mraName = ""
+    var didPickMany = ""
+    
+    var ace_i = ""
+    var beta_blocker = ""
+    var diuretic = ""
 
+    
     
     var detailPatient: SummaryPatient? {
         didSet {
@@ -71,6 +84,8 @@ class MedicationTableViewController: UITableViewController, ACETableViewControll
             self.userSelected = user
             patientName = user.userName
             patientUid = user.uid
+            dataService.fetchSummaryToNurse(user.userName, callback: populateSummaryToNurse)
+
             print("- USER FROM MEDICATION: ", user.userName, user.uid)
             
         } else
@@ -80,6 +95,8 @@ class MedicationTableViewController: UITableViewController, ACETableViewControll
                 self.patientSelected = patient
                 patientName = patient.userName
                 patientUid = patient.uid
+                
+                dataService.fetchSummaryToNurse(patient.userName, callback: populateSummaryToNurse)
 
                 print("- USER FROM MEDICATION: ", patient.userName, patient.uid)
         }
@@ -100,6 +117,68 @@ class MedicationTableViewController: UITableViewController, ACETableViewControll
 
         
     }
+    
+    func populateSummaryToNurse(summary: [SummaryToNurse]) -> Void {
+        
+        //myActivityIndicator.startAnimating()
+        
+        
+        self.summaryToNurseSamples = summary
+        
+        for i in self.summaryToNurseSamples {
+            print("**** MEDICINE FROM SUMMARY: ", i.date, i.ace_i, i.beta_blocker)
+            
+        }
+        
+        dispatch_async(dispatch_get_main_queue()) { [unowned self] in
+            
+            if self.summaryToNurseSamples != [] {
+                
+                if self.summaryToNurseSamples[0].ace_i == 1 {
+                    self.ace_i = "Increase ACE-I dosage"
+                    print("ACE MEDICINE = ", self.ace_i)
+                    
+                } else if  self.summaryToNurseSamples[0].ace_i == -1 {
+                    self.ace_i = "Decrease ACE-I dosage"
+                    print("ACE MEDICINE = ", self.ace_i)
+
+                }
+                
+                
+                if self.summaryToNurseSamples[0].beta_blocker == 1 {
+                    self.beta_blocker = "Increase Beta blocker dosage"
+                    
+                } else if self.summaryToNurseSamples[0].beta_blocker == -1 {
+                    self.beta_blocker = "Decrease Beta blocker dosage"
+                }
+                
+                if self.summaryToNurseSamples[0].diuretic == 1 {
+                    self.diuretic = "Increase Diuretic dosage"
+                    
+                } else if self.summaryToNurseSamples[0].diuretic == -1 {
+                    self.diuretic = "Decrease Diuretic dosage"}
+                
+                if self.ace_i != ""  ||  self.beta_blocker != ""  ||  self.diuretic != "" {
+                    
+                    self.suggestedMedicineTextView.text = "Based on symptoms and objective data from the patient, the system recommends the following medication update:\n\n"
+                        + self.ace_i + "\n" + self.beta_blocker + "\n" + self.diuretic 
+                    
+                } else {
+                    self.suggestedMedicineTextView.text = "No new medicine recommendations yet."
+                }
+                
+            } else {
+                
+                self.suggestedMedicineTextView.text = "The patient has not send enough data yet."
+
+            }
+            
+            //self.myActivityIndicator.stopAnimating()
+            
+        }
+        
+    }
+
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -164,12 +243,21 @@ class MedicationTableViewController: UITableViewController, ACETableViewControll
     func mraPicker(picker: MRATableViewController, didPickName arbName: String) {
         self.mraName = arbName
         mraType.text = arbName
-        navigationController?.popViewControllerAnimated(true)
+        
+//        for i in didPickMany {
+//            print(didPickMany, i)
+//        }
+//        
+        //mraType.text =
+       // navigationController?.popViewControllerAnimated(true)
         
     }
     
+
+    
     @IBAction func sendDataToPatient(sender: AnyObject) {
         
+        self.medicineActivityIndicator.startAnimating()
         
         let aceDose = self.aceDose.text
         let aceTimesADay = self.aceTimesADay.text
@@ -205,10 +293,27 @@ class MedicationTableViewController: UITableViewController, ACETableViewControll
                                                      mraType: mraName, mraDose: mraDose!, mraTimesADay: mraTimesADay! )
             
             print("** Medicine: ", userID, aceDose!, aceTimesADay!, betaDose!, betaTimesADay!)
+            
+            self.suggestedMedicineTextView.text = "\n\n\nThe new prescription has been sent to the patient"
+            self.suggestedMedicineTextView.textColor = UIColor.blueColor()
+
+            self.medicineActivityIndicator.stopAnimating()
+            
+            tableView.setContentOffset(CGPointZero, animated:true)
+
 
             
         } else {
             print("PATIENT NOT SELECTED")
+            
+            self.suggestedMedicineTextView.text = "\n\n\nFirst, you need to select a patient"
+            
+            self.medicineActivityIndicator.stopAnimating()
+            
+            tableView.setContentOffset(CGPointZero, animated:true)
+
+
+
         }
 
         
