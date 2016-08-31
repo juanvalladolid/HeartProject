@@ -11,13 +11,13 @@ This repository includes two projects:
 
 - For running the project install the following Pods:
 
-ResearchKit, Firebase Authentication and Database and Fabric crashlytics (optionally)
+  ResearchKit, Firebase Authentication and Database and Fabric crashlytics (optionally)
 
 # HeartNurse
 - A prototype application that handles Heart Failure patients from the above ap. 
 
 - Medication can be titrated remotely and sent to the Patient app.
-
+.
 - For running the project install the following Pods
 
-ResearchKit, Firebase Authentication and Database, and Fabric crashlytics (optionally)
+  ResearchKit, Firebase Authentication and Database, and Fabric crashlytics (optionally)
