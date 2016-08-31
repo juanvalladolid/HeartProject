@@ -1,4 +1,5 @@
-This repository includes two projects:
+This repository includes two apps from a Master Project at the Technical University of Denmark.
+The project is about evaluating rule based algorithms in the treatment of Heart Failure:
 
 # HeartPatient
 - A prototype application that supports Heart Failure patients.
