@@ -8,7 +8,7 @@ The project is about evaluating rule based algorithms in the treatment of Heart 
 
 - Then, it can provide of insights from the disease. 
 
-- Additionally, it will send patient's data to a Firebase cloud for a Nurse or Doctor to evaluate the patient
+- Additionally, it will send patient's data to a Firebase cloud so a Nurse or Doctor can evaluate the patient's health.
 
 - For running the project install the following Pods:
 
