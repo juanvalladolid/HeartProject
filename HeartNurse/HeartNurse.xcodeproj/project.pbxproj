@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E79231613E2599E30835F85 /* Pods_HeartNurse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B20C0DFC55008A9269435A /* Pods_HeartNurse.framework */; };
+		9D44BAC21D6ACC9B00187858 /* NewMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D44BAC11D6ACC9B00187858 /* NewMasterViewController.swift */; };
+		9D44BAC81D6B076400187858 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D44BAC71D6B076400187858 /* Extension.swift */; };
+		9D72CC811D6D434900F14F3C /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D72CC801D6D434900F14F3C /* HelperFunctions.swift */; };
+		9D783D141D48321F0047ED64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D783D131D48321F0047ED64 /* AppDelegate.swift */; };
+		9D783D181D48321F0047ED64 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D783D171D48321F0047ED64 /* DetailViewController.swift */; };
+		9D783D1B1D48321F0047ED64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D783D191D48321F0047ED64 /* Main.storyboard */; };
+		9D783D1D1D48321F0047ED64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D783D1C1D48321F0047ED64 /* Assets.xcassets */; };
+		9D783D201D48321F0047ED64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D783D1E1D48321F0047ED64 /* LaunchScreen.storyboard */; };
+		9D84C2F91D487C380095FC79 /* BloodPressureGraphDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84C2F81D487C380095FC79 /* BloodPressureGraphDataSource.swift */; };
+		9D90DB1C1D4F17B9004D11BE /* HeartRateGraphDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D90DB1B1D4F17B9004D11BE /* HeartRateGraphDataSource.swift */; };
+		9DB48EAB1D496DE3007C8FDF /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB48EA91D496DE3007C8FDF /* Fabric.framework */; };
+		9DB48EAC1D496DE3007C8FDF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB48EAA1D496DE3007C8FDF /* Crashlytics.framework */; };
+		9DBE25291D6EC10C006A765E /* MedicationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE25281D6EC10C006A765E /* MedicationTableViewController.swift */; };
+		9DBE252C1D6EC592006A765E /* ACETableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE252B1D6EC592006A765E /* ACETableViewController.swift */; };
+		9DBE252F1D6EE914006A765E /* BetaBlockerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE252E1D6EE914006A765E /* BetaBlockerTableViewController.swift */; };
+		9DBE25311D6EED74006A765E /* DiureticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE25301D6EED74006A765E /* DiureticTableViewController.swift */; };
+		9DBE25331D6EFEFB006A765E /* MedicineNurse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE25321D6EFEFB006A765E /* MedicineNurse.swift */; };
+		9DBE25361D6F9931006A765E /* ARBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE25351D6F9931006A765E /* ARBTableViewController.swift */; };
+		9DBE25381D6FA147006A765E /* MRATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE25371D6FA147006A765E /* MRATableViewController.swift */; };
+		9DBE3DCE1D4837CA006BD874 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE3DCD1D4837CA006BD874 /* User.swift */; };
+		9DBE3DD01D4837DC006BD874 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE3DCF1D4837DC006BD874 /* Weight.swift */; };
+		9DBE3DD21D4837F5006BD874 /* BloodPressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE3DD11D4837F5006BD874 /* BloodPressure.swift */; };
+		9DBE3DD41D4838B1006BD874 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE3DD31D4838B1006BD874 /* FirebaseService.swift */; };
+		9DBE3DF51D483E9F006BD874 /* WeightGraphDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE3DF41D483E9F006BD874 /* WeightGraphDataSource.swift */; };
+		9DBE3E001D483F86006BD874 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBE3DFD1D483F40006BD874 /* ResearchKit.framework */; };
+		9DBE3E011D483F86006BD874 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBE3DFD1D483F40006BD874 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9DBE3E061D484044006BD874 /* AnimatableChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE3E051D484044006BD874 /* AnimatableChart.swift */; };
+		9DBE3E0B1D4846B3006BD874 /* ChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE3E0A1D4846B3006BD874 /* ChartTableViewController.swift */; };
+		9DBE3E141D4853AE006BD874 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DBE3E131D4853AE006BD874 /* GoogleService-Info.plist */; };
+		9DC9F1911D4F1411009C2136 /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9F1901D4F1411009C2136 /* HeartRate.swift */; };
+		9DD0FCB71D6E5578003A08E7 /* EvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0FCB61D6E5578003A08E7 /* EvaluationTableViewCell.swift */; };
+		9DD0FCBB1D6E56AF003A08E7 /* SummaryToNurse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0FCBA1D6E56AF003A08E7 /* SummaryToNurse.swift */; };
+		9DD4ADB11D6AA95500DCB7BF /* SummaryPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4ADB01D6AA95400DCB7BF /* SummaryPatient.swift */; };
+		9DD4ADB51D6AB17C00DCB7BF /* PatientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4ADB41D6AB17C00DCB7BF /* PatientsTableViewCell.swift */; };
+		9DE4DBAF1D677F2200E740DA /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE4DBAE1D677F2200E740DA /* SymptomsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DBE3DFC1D483F40006BD874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DBE3DF61D483F40006BD874 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		9DBE3DFE1D483F40006BD874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DBE3DF61D483F40006BD874 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		9DBE3E021D483F86006BD874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DBE3DF61D483F40006BD874 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9DBE3E041D483F86006BD874 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DBE3E011D483F86006BD874 /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9D44BAC11D6ACC9B00187858 /* NewMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMasterViewController.swift; sourceTree = "<group>"; };
+		9D44BAC71D6B076400187858 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9D72CC801D6D434900F14F3C /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		9D783D101D48321F0047ED64 /* HeartNurse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartNurse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D783D131D48321F0047ED64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D783D171D48321F0047ED64 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9D783D1A1D48321F0047ED64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D783D1C1D48321F0047ED64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D783D1F1D48321F0047ED64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D783D211D48321F0047ED64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D84C2F81D487C380095FC79 /* BloodPressureGraphDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressureGraphDataSource.swift; sourceTree = "<group>"; };
+		9D90DB1B1D4F17B9004D11BE /* HeartRateGraphDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateGraphDataSource.swift; sourceTree = "<group>"; };
+		9DB48EA91D496DE3007C8FDF /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		9DB48EAA1D496DE3007C8FDF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		9DBE25281D6EC10C006A765E /* MedicationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationTableViewController.swift; sourceTree = "<group>"; };
+		9DBE252B1D6EC592006A765E /* ACETableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACETableViewController.swift; sourceTree = "<group>"; };
+		9DBE252E1D6EE914006A765E /* BetaBlockerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetaBlockerTableViewController.swift; sourceTree = "<group>"; };
+		9DBE25301D6EED74006A765E /* DiureticTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiureticTableViewController.swift; sourceTree = "<group>"; };
+		9DBE25321D6EFEFB006A765E /* MedicineNurse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineNurse.swift; sourceTree = "<group>"; };
+		9DBE25351D6F9931006A765E /* ARBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARBTableViewController.swift; sourceTree = "<group>"; };
+		9DBE25371D6FA147006A765E /* MRATableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRATableViewController.swift; sourceTree = "<group>"; };
+		9DBE3DCD1D4837CA006BD874 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9DBE3DCF1D4837DC006BD874 /* Weight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
+		9DBE3DD11D4837F5006BD874 /* BloodPressure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressure.swift; sourceTree = "<group>"; };
+		9DBE3DD31D4838B1006BD874 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		9DBE3DF41D483E9F006BD874 /* WeightGraphDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightGraphDataSource.swift; sourceTree = "<group>"; };
+		9DBE3DF61D483F40006BD874 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
+		9DBE3E051D484044006BD874 /* AnimatableChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableChart.swift; sourceTree = "<group>"; };
+		9DBE3E0A1D4846B3006BD874 /* ChartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartTableViewController.swift; sourceTree = "<group>"; };
+		9DBE3E131D4853AE006BD874 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9DC9F1901D4F1411009C2136 /* HeartRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
+		9DD0FCB61D6E5578003A08E7 /* EvaluationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationTableViewCell.swift; sourceTree = "<group>"; };
+		9DD0FCBA1D6E56AF003A08E7 /* SummaryToNurse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryToNurse.swift; sourceTree = "<group>"; };
+		9DD4ADB01D6AA95400DCB7BF /* SummaryPatient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryPatient.swift; sourceTree = "<group>"; };
+		9DD4ADB41D6AB17C00DCB7BF /* PatientsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsTableViewCell.swift; sourceTree = "<group>"; };
+		9DE4DBAE1D677F2200E740DA /* SymptomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
+		C0B20C0DFC55008A9269435A /* Pods_HeartNurse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeartNurse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA60926C876258A41A3B07B8 /* Pods-HeartNurse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartNurse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeartNurse/Pods-HeartNurse.debug.xcconfig"; sourceTree = "<group>"; };
+		F5D487B0CB3B6A2B5DB0FC23 /* Pods-HeartNurse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartNurse.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeartNurse/Pods-HeartNurse.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D783D0D1D48321F0047ED64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DBE3E001D483F86006BD874 /* ResearchKit.framework in Frameworks */,
+				0E79231613E2599E30835F85 /* Pods_HeartNurse.framework in Frameworks */,
+				9DB48EAC1D496DE3007C8FDF /* Crashlytics.framework in Frameworks */,
+				9DB48EAB1D496DE3007C8FDF /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22C250215534A4A978A18C5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0B20C0DFC55008A9269435A /* Pods_HeartNurse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D72CC7D1D6D319700F14F3C /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9DD4ADB41D6AB17C00DCB7BF /* PatientsTableViewCell.swift */,
+				9DD0FCB61D6E5578003A08E7 /* EvaluationTableViewCell.swift */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		9D72CC7F1D6D433700F14F3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9D72CC801D6D434900F14F3C /* HelperFunctions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9D783D071D48321F0047ED64 = {
+			isa = PBXGroup;
+			children = (
+				9DB48EA91D496DE3007C8FDF /* Fabric.framework */,
+				9DB48EAA1D496DE3007C8FDF /* Crashlytics.framework */,
+				9DBE3DF61D483F40006BD874 /* ResearchKit.xcodeproj */,
+				9D783D121D48321F0047ED64 /* HeartNurse */,
+				9D783D111D48321F0047ED64 /* Products */,
+				BFEE537C5F29D4C7B519AD30 /* Pods */,
+				22C250215534A4A978A18C5C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9D783D111D48321F0047ED64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D783D101D48321F0047ED64 /* HeartNurse.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D783D121D48321F0047ED64 /* HeartNurse */ = {
+			isa = PBXGroup;
+			children = (
+				9DBE3E131D4853AE006BD874 /* GoogleService-Info.plist */,
+				9DBE25251D6EB964006A765E /* Medicine */,
+				9D72CC7F1D6D433700F14F3C /* Extensions */,
+				9D72CC7D1D6D319700F14F3C /* Custom Cells */,
+				9DE4DBAB1D677EEA00E740DA /* Evaluation */,
+				9DBE3DF31D483E54006BD874 /* UserGraph */,
+				9DBE3DCC1D4837BA006BD874 /* Service */,
+				9DBE3DCB1D4837B2006BD874 /* Models */,
+				9D783D131D48321F0047ED64 /* AppDelegate.swift */,
+				9D44BAC11D6ACC9B00187858 /* NewMasterViewController.swift */,
+				9D783D171D48321F0047ED64 /* DetailViewController.swift */,
+				9D783D191D48321F0047ED64 /* Main.storyboard */,
+				9D783D1C1D48321F0047ED64 /* Assets.xcassets */,
+				9D783D1E1D48321F0047ED64 /* LaunchScreen.storyboard */,
+				9D783D211D48321F0047ED64 /* Info.plist */,
+				9D44BAC71D6B076400187858 /* Extension.swift */,
+			);
+			path = HeartNurse;
+			sourceTree = "<group>";
+		};
+		9DBE25251D6EB964006A765E /* Medicine */ = {
+			isa = PBXGroup;
+			children = (
+				9DBE25281D6EC10C006A765E /* MedicationTableViewController.swift */,
+				9DBE252B1D6EC592006A765E /* ACETableViewController.swift */,
+				9DBE252E1D6EE914006A765E /* BetaBlockerTableViewController.swift */,
+				9DBE25301D6EED74006A765E /* DiureticTableViewController.swift */,
+				9DBE25351D6F9931006A765E /* ARBTableViewController.swift */,
+				9DBE25371D6FA147006A765E /* MRATableViewController.swift */,
+			);
+			name = Medicine;
+			sourceTree = "<group>";
+		};
+		9DBE3DCB1D4837B2006BD874 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9DBE3DCD1D4837CA006BD874 /* User.swift */,
+				9DBE3DCF1D4837DC006BD874 /* Weight.swift */,
+				9DBE3DD11D4837F5006BD874 /* BloodPressure.swift */,
+				9DC9F1901D4F1411009C2136 /* HeartRate.swift */,
+				9DD4ADB01D6AA95400DCB7BF /* SummaryPatient.swift */,
+				9DD0FCBA1D6E56AF003A08E7 /* SummaryToNurse.swift */,
+				9DBE25321D6EFEFB006A765E /* MedicineNurse.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9DBE3DCC1D4837BA006BD874 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9DBE3DD31D4838B1006BD874 /* FirebaseService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		9DBE3DF31D483E54006BD874 /* UserGraph */ = {
+			isa = PBXGroup;
+			children = (
+				9DBE3DF41D483E9F006BD874 /* WeightGraphDataSource.swift */,
+				9D84C2F81D487C380095FC79 /* BloodPressureGraphDataSource.swift */,
+				9D90DB1B1D4F17B9004D11BE /* HeartRateGraphDataSource.swift */,
+				9DBE3E051D484044006BD874 /* AnimatableChart.swift */,
+				9DBE3E0A1D4846B3006BD874 /* ChartTableViewController.swift */,
+			);
+			name = UserGraph;
+			sourceTree = "<group>";
+		};
+		9DBE3DF71D483F40006BD874 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DBE3DFD1D483F40006BD874 /* ResearchKit.framework */,
+				9DBE3DFF1D483F40006BD874 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DE4DBAB1D677EEA00E740DA /* Evaluation */ = {
+			isa = PBXGroup;
+			children = (
+				9DE4DBAE1D677F2200E740DA /* SymptomsViewController.swift */,
+			);
+			name = Evaluation;
+			sourceTree = "<group>";
+		};
+		BFEE537C5F29D4C7B519AD30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA60926C876258A41A3B07B8 /* Pods-HeartNurse.debug.xcconfig */,
+				F5D487B0CB3B6A2B5DB0FC23 /* Pods-HeartNurse.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D783D0F1D48321F0047ED64 /* HeartNurse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D783D241D48321F0047ED64 /* Build configuration list for PBXNativeTarget "HeartNurse" */;
+			buildPhases = (
+				C997C493E293CE96C7601320 /* 📦 Check Pods Manifest.lock */,
+				9D783D0C1D48321F0047ED64 /* Sources */,
+				9D783D0D1D48321F0047ED64 /* Frameworks */,
+				9D783D0E1D48321F0047ED64 /* Resources */,
+				23D283F679FCA6708CF5F15B /* 📦 Embed Pods Frameworks */,
+				D2A15FA842BAB1235E83F1FB /* 📦 Copy Pods Resources */,
+				9DBE3E041D483F86006BD874 /* Embed Frameworks */,
+				9DB48EA61D496D99007C8FDF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DBE3E031D483F86006BD874 /* PBXTargetDependency */,
+			);
+			name = HeartNurse;
+			productName = HeartNurse;
+			productReference = 9D783D101D48321F0047ED64 /* HeartNurse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D783D081D48321F0047ED64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = DTU;
+				TargetAttributes = {
+					9D783D0F1D48321F0047ED64 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = QTJ4AK96BY;
+					};
+				};
+			};
+			buildConfigurationList = 9D783D0B1D48321F0047ED64 /* Build configuration list for PBXProject "HeartNurse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D783D071D48321F0047ED64;
+			productRefGroup = 9D783D111D48321F0047ED64 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9DBE3DF71D483F40006BD874 /* Products */;
+					ProjectRef = 9DBE3DF61D483F40006BD874 /* ResearchKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				9D783D0F1D48321F0047ED64 /* HeartNurse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9DBE3DFD1D483F40006BD874 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 9DBE3DFC1D483F40006BD874 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9DBE3DFF1D483F40006BD874 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 9DBE3DFE1D483F40006BD874 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D783D0E1D48321F0047ED64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D783D201D48321F0047ED64 /* LaunchScreen.storyboard in Resources */,
+				9DBE3E141D4853AE006BD874 /* GoogleService-Info.plist in Resources */,
+				9D783D1D1D48321F0047ED64 /* Assets.xcassets in Resources */,
+				9D783D1B1D48321F0047ED64 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23D283F679FCA6708CF5F15B /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeartNurse/Pods-HeartNurse-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DB48EA61D496D99007C8FDF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d1ed881d387ec0bdc576ab5bcaa6a237d825566a 5f232cba54ce3bff92cbd38e52e44cf0e4cd2f54e8fcf0b3b9f42fd214153f9c";
+		};
+		C997C493E293CE96C7601320 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2A15FA842BAB1235E83F1FB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeartNurse/Pods-HeartNurse-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D783D0C1D48321F0047ED64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DD4ADB11D6AA95500DCB7BF /* SummaryPatient.swift in Sources */,
+				9DBE3DD01D4837DC006BD874 /* Weight.swift in Sources */,
+				9DBE3E061D484044006BD874 /* AnimatableChart.swift in Sources */,
+				9DBE3E0B1D4846B3006BD874 /* ChartTableViewController.swift in Sources */,
+				9D84C2F91D487C380095FC79 /* BloodPressureGraphDataSource.swift in Sources */,
+				9DE4DBAF1D677F2200E740DA /* SymptomsViewController.swift in Sources */,
+				9D44BAC21D6ACC9B00187858 /* NewMasterViewController.swift in Sources */,
+				9DBE3DCE1D4837CA006BD874 /* User.swift in Sources */,
+				9DBE25331D6EFEFB006A765E /* MedicineNurse.swift in Sources */,
+				9D783D181D48321F0047ED64 /* DetailViewController.swift in Sources */,
+				9DBE3DF51D483E9F006BD874 /* WeightGraphDataSource.swift in Sources */,
+				9DD0FCB71D6E5578003A08E7 /* EvaluationTableViewCell.swift in Sources */,
+				9D44BAC81D6B076400187858 /* Extension.swift in Sources */,
+				9DBE25311D6EED74006A765E /* DiureticTableViewController.swift in Sources */,
+				9DD4ADB51D6AB17C00DCB7BF /* PatientsTableViewCell.swift in Sources */,
+				9D90DB1C1D4F17B9004D11BE /* HeartRateGraphDataSource.swift in Sources */,
+				9DBE3DD41D4838B1006BD874 /* FirebaseService.swift in Sources */,
+				9D783D141D48321F0047ED64 /* AppDelegate.swift in Sources */,
+				9DBE25381D6FA147006A765E /* MRATableViewController.swift in Sources */,
+				9DD0FCBB1D6E56AF003A08E7 /* SummaryToNurse.swift in Sources */,
+				9DC9F1911D4F1411009C2136 /* HeartRate.swift in Sources */,
+				9DBE252F1D6EE914006A765E /* BetaBlockerTableViewController.swift in Sources */,
+				9DBE3DD21D4837F5006BD874 /* BloodPressure.swift in Sources */,
+				9DBE25291D6EC10C006A765E /* MedicationTableViewController.swift in Sources */,
+				9DBE25361D6F9931006A765E /* ARBTableViewController.swift in Sources */,
+				9D72CC811D6D434900F14F3C /* HelperFunctions.swift in Sources */,
+				9DBE252C1D6EC592006A765E /* ACETableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DBE3E031D483F86006BD874 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = 9DBE3E021D483F86006BD874 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9D783D191D48321F0047ED64 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D783D1A1D48321F0047ED64 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9D783D1E1D48321F0047ED64 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D783D1F1D48321F0047ED64 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D783D221D48321F0047ED64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D783D231D48321F0047ED64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D783D251D48321F0047ED64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA60926C876258A41A3B07B8 /* Pods-HeartNurse.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = HeartNurse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Thesis.HeartNurse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9D783D261D48321F0047ED64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5D487B0CB3B6A2B5DB0FC23 /* Pods-HeartNurse.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = HeartNurse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Thesis.HeartNurse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D783D0B1D48321F0047ED64 /* Build configuration list for PBXProject "HeartNurse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D783D221D48321F0047ED64 /* Debug */,
+				9D783D231D48321F0047ED64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D783D241D48321F0047ED64 /* Build configuration list for PBXNativeTarget "HeartNurse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D783D251D48321F0047ED64 /* Debug */,
+				9D783D261D48321F0047ED64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D783D081D48321F0047ED64 /* Project object */;
+}
