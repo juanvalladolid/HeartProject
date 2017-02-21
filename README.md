@@ -1,6 +1,9 @@
 This repository includes two apps from a Master Project at the Technical University of Denmark.
 The project is about evaluating rule based algorithms in the treatment of Heart Failure:
 
+![Settings Window](https://github.com/juanvalladolid/HeartProject/blob/juanvalladolid-upload-1/medicine-titration.png)
+
+
 # HeartPatient
 
 ![Settings Window](https://github.com/juanvalladolid/HeartProject/blob/images/healthkit.png)
