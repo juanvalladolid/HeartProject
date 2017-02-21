@@ -2,6 +2,7 @@ This repository includes two apps from a Master Project at the Technical Univers
 The project is about evaluating rule based algorithms in the treatment of Heart Failure:
 
 # HeartPatient
+![Settings Window](https://github.com/juanvalladolid/HeartProject/blob/images/healthkit.png)
 - A prototype application that supports Heart Failure patients.
 
 - The app can collect HealthKit Data and symptoms through surveys from ResearchKit. 
